@@ -1,0 +1,195 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 33% 98%;
+    --foreground: 30 9% 18%;
+
+    --card: 40 33% 99%;
+    --card-foreground: 30 9% 18%;
+
+    --popover: 40 33% 99%;
+    --popover-foreground: 30 9% 18%;
+
+    --primary: 124 55% 24%;
+    --primary-foreground: 40 33% 99%;
+
+    --secondary: 201 97% 37%;
+    --secondary-foreground: 40 33% 99%;
+
+    --accent: 43 96% 58%;
+    --accent-foreground: 30 9% 18%;
+
+    --muted: 40 17% 93%;
+    --muted-foreground: 30 9% 46%;
+
+    --destructive: 0 68% 47%;
+    --destructive-foreground: 40 33% 99%;
+
+    --border: 30 15% 88%;
+    --input: 30 15% 88%;
+    --ring: 124 55% 24%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 30 9% 10%;
+    --foreground: 40 33% 99%;
+
+    --card: 30 9% 14%;
+    --card-foreground: 40 33% 99%;
+
+    --popover: 30 9% 14%;
+    --popover-foreground: 40 33% 99%;
+
+    --primary: 124 55% 30%;
+    --primary-foreground: 40 33% 99%;
+
+    --secondary: 201 97% 45%;
+    --secondary-foreground: 40 33% 99%;
+
+    --accent: 43 96% 50%;
+    --accent-foreground: 30 9% 10%;
+
+    --muted: 30 9% 20%;
+    --muted-foreground: 30 9% 70%;
+
+    --destructive: 0 68% 51%;
+    --destructive-foreground: 40 33% 99%;
+
+    --border: 30 9% 25%;
+    --input: 30 9% 25%;
+    --ring: 124 55% 30%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23115740' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-alternates tracking-wide;
+  }
+
+  h1 {
+    @apply text-choco-gold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+  
+  .btn-primary {
+    @apply bg-choco-green text-white rounded-md px-4 py-2 hover:bg-opacity-90 transition-all shadow-md;
+  }
+  
+  .btn-secondary {
+    @apply bg-choco-blue text-white rounded-md px-4 py-2 hover:bg-opacity-90 transition-all shadow-md;
+  }
+  
+  .btn-accent {
+    @apply bg-choco-red text-white rounded-md px-4 py-2 hover:bg-opacity-90 transition-all shadow-md;
+  }
+  
+  .btn-outline {
+    @apply border border-choco-gold text-choco-brown rounded-md px-4 py-2 hover:bg-choco-gold hover:bg-opacity-20 transition-all;
+  }
+
+  .card-product {
+    @apply bg-white rounded-lg shadow-md overflow-hidden transition-all hover:shadow-xl relative;
+    background-image: linear-gradient(to bottom, rgba(255,255,255,0.95), rgba(255,255,255,1)), url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23f9a826' fill-opacity='0.1' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .product-tag {
+    @apply bg-choco-gold text-choco-brown text-xs px-2 py-1 rounded-md font-bold shadow-sm;
+  }
+  
+  .badge {
+    @apply inline-flex items-center px-2 py-1 rounded-full text-xs font-medium;
+  }
+  
+  .section-title {
+    @apply text-3xl font-alternates text-choco-brown font-bold relative pb-4 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:transform after:-translate-x-1/2 after:w-20 after:h-1 after:bg-choco-gold;
+  }
+
+  .pacifico-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f9a826' fill-opacity='0.15'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .afro-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23115740' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+  }
+
+  /* Animaciones para elementos afrocolombianos */
+  .anim-tambor {
+    animation: tambor 5s ease-in-out infinite;
+  }
+
+  @keyframes tambor {
+    0%, 100% { transform: rotate(-2deg); }
+    50% { transform: rotate(2deg); }
+  }
+
+  .anim-ola {
+    animation: ola 8s ease-in-out infinite;
+  }
+
+  @keyframes ola {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .decorative-pattern {
+    position: absolute;
+    mask-image: url("data:image/svg+xml,%3Csvg width='60' height='96' viewBox='0 0 60 96' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23115740' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M36 10a6 6 0 0 1 12 0v12a6 6 0 0 1-6 6 6 6 0 0 0-6 6 6 6 0 0 1-12 0 6 6 0 0 0-6-6 6 6 0 0 1-6-6V10a6 6 0 1 1 12 0 6 6 0 0 0 12 0zm24 78a6 6 0 0 1-6-6 6 6 0 0 0-6-6 6 6 0 0 1-6-6V58a6 6 0 1 1 12 0 6 6 0 0 0 6 6v24zM0 88V64a6 6 0 0 0 6-6 6 6 0 0 1 12 0v12a6 6 0 0 1-6 6 6 6 0 0 0-6 6 6 6 0 0 1-6 6z'/%3E%3C/g%3E%3C/svg%3E");
+    mask-size: cover;
+    background-color: currentColor;
+  }
+}
+
+/* Estilos especiales para sombras */
+.choco-shadow {
+  box-shadow: 0 4px 12px rgba(27, 94, 32, 0.15);
+}
+
+.gold-shadow {
+  box-shadow: 0 4px 12px rgba(251, 192, 45, 0.25);
+}
+
+/* Estilos para elementos específicos */
+.producto-afrocolombiano::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, #1B5E20, #FBC02D, #0277BD, #C62828);
+  border-radius: 3px 3px 0 0;
+  z-index: 1;
+}
