@@ -1,4 +1,3 @@
-
 import React, { createContext, useState, useEffect } from 'react';
 import { driver, Config } from 'driver.js';
 import 'driver.js/dist/driver.css';
@@ -64,7 +63,7 @@ export const ProveedorTutorial: React.FC<{ children: React.ReactNode }> = ({ chi
   const [pasoActual, setPasoActual] = useState(0);
   const [pasos] = useState<PasoTutorial[]>(pasosDefault);
   const [tutorialCompletado, setTutorialCompletado] = useState<boolean | null>(null);
-  const [driverObj, setDriverObj] = useState<any>(null);
+  const [driverObj, setDriverObj] = useState<unknown>(null);
   
   // Verificar si el tutorial se ha completado antes
   useEffect(() => {
@@ -141,21 +140,22 @@ export const ProveedorTutorial: React.FC<{ children: React.ReactNode }> = ({ chi
     setTutorialCompletado(true);
   };
   
+  // Al usar driverObj, hacer una aserción de tipo para acceder a los métodos
   const siguientePaso = () => {
     if (driverObj && pasoActual < pasos.length - 1) {
-      driverObj.moveNext();
+      (driverObj as { moveNext: () => void }).moveNext();
     }
   };
   
   const pasoAnterior = () => {
     if (driverObj && pasoActual > 0) {
-      driverObj.movePrevious();
+      (driverObj as { movePrevious: () => void }).movePrevious();
     }
   };
   
   const saltarTutorial = () => {
     if (driverObj) {
-      driverObj.destroy();
+      (driverObj as { destroy: () => void }).destroy();
     }
     finalizarTutorial();
   };
