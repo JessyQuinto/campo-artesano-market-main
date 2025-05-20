@@ -26,25 +26,36 @@ Este proyecto está construido con las siguientes tecnologías:
 
 ## Cómo ejecutar este proyecto localmente
 
-Asegúrate de tener Node.js y npm instalados. Recomendamos usar nvm para gestionar versiones de Node.js: [https://github.com/nvm-sh/nvm#instalación](https://github.com/nvm-sh/nvm#instalación)
+Asegúrate de tener Node.js instalado. Ahora se recomienda usar **pnpm** para la gestión de dependencias (más rápido y eficiente que npm o yarn). Si no tienes pnpm, instálalo con:
 
-Pasos:
+```powershell
+npm install -g pnpm
+```
 
-```sh
-# 1. Clonar el repositorio:
+Pasos para iniciar la aplicación:
+
+```powershell
+# 1. Clona el repositorio:
 git clone <TU_URL_DEL_REPOSITORIO>
 
-# 2. Ingresar al directorio del proyecto:
-cd <NOMBRE_DEL_PROYECTO>
+# 2. Ingresa al directorio del proyecto:
+cd campo-artesano-market-main
 
-# 3. Instalar las dependencias:
-npm install
+# 3. Instala las dependencias:
+pnpm install
 
-# 4. Iniciar el servidor de desarrollo:
-npm run dev
+# 4. Inicia el servidor de desarrollo:
+pnpm run dev
 ```
 
 Esto abrirá la aplicación en tu navegador, usualmente en [http://localhost:5173](http://localhost:5173)
+
+## Scripts útiles
+
+- `pnpm run dev` — Inicia el servidor de desarrollo.
+- `pnpm run build` — Genera la versión optimizada para producción.
+- `pnpm run preview` — Previsualiza la build de producción localmente.
+- `pnpm run lint` — Ejecuta el linter para revisar el código.
 
 ## Cómo desplegar el proyecto
 
@@ -60,7 +71,7 @@ Pasos básicos para desplegar en Vercel:
 1. Crea una cuenta en [https://vercel.com/](https://vercel.com/)
 2. Conecta tu repositorio desde GitHub.
 3. Selecciona "Vite" como framework.
-4. Vercel detectará automáticamente los scripts de build (`npm run build`) y de desarrollo (`npm run dev`).
+4. Vercel detectará automáticamente los scripts de build (`pnpm run build`) y de desarrollo (`pnpm run dev`).
 5. ¡Listo! Tu ecommerce estará en línea.
 
 ## ¿Puedo conectar un dominio personalizado?
