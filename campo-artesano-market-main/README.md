@@ -26,36 +26,32 @@ Este proyecto está construido con las siguientes tecnologías:
 
 ## Cómo ejecutar este proyecto localmente
 
-Asegúrate de tener Node.js instalado. Ahora se recomienda usar **pnpm** para la gestión de dependencias (más rápido y eficiente que npm o yarn). Si no tienes pnpm, instálalo con:
+Asegúrate de tener Node.js instalado. Este proyecto funciona correctamente usando **npm** (el gestor de paquetes por defecto de Node.js). Si prefieres, puedes instalar y usar **pnpm** o **bun**, pero la integración principal y los archivos de lock están preparados para npm.
 
-```powershell
-npm install -g pnpm
-```
-
-Pasos para iniciar la aplicación:
+### Instalación y ejecución con npm
 
 ```powershell
 # 1. Clona el repositorio:
 git clone <TU_URL_DEL_REPOSITORIO>
 
 # 2. Ingresa al directorio del proyecto:
-cd campo-artesano-market-main
+cd campo-artesano-market-main/campo-artesano-market-main
 
 # 3. Instala las dependencias:
-pnpm install
+npm install
 
 # 4. Inicia el servidor de desarrollo:
-pnpm run dev
+npm run dev
 ```
 
-Esto abrirá la aplicación en tu navegador, usualmente en [http://localhost:5173](http://localhost:5173)
+Esto abrirá la aplicación en tu navegador, usualmente en [http://localhost:8080](http://localhost:8080)
 
 ## Scripts útiles
 
-- `pnpm run dev` — Inicia el servidor de desarrollo.
-- `pnpm run build` — Genera la versión optimizada para producción.
-- `pnpm run preview` — Previsualiza la build de producción localmente.
-- `pnpm run lint` — Ejecuta el linter para revisar el código.
+- `npm run dev` — Inicia el servidor de desarrollo.
+- `npm run build` — Genera la versión optimizada para producción.
+- `npm run preview` — Previsualiza la build de producción localmente.
+- `npm run lint` — Ejecuta el linter para revisar el código.
 
 ## Cómo desplegar el proyecto
 
