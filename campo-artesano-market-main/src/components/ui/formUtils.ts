@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { useFormContext, FieldPath, FieldValues } from "react-hook-form";
 import { FormItemContext } from "./form";
 
@@ -16,7 +16,7 @@ export function useFormField() {
     throw new Error("useFormField should be used within <FormField>");
   }
 
-  const { id } = itemContext;
+  const { id } = itemContext || { id: undefined };
 
   return {
     id,

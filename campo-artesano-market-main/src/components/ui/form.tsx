@@ -40,6 +40,11 @@ const FormField = <
   )
 }
 
+// Contexto para el item del formulario
+export interface FormItemContextValue {
+  id: string;
+}
+
 const FormItemContext = React.createContext<FormItemContextValue>(
   {} as FormItemContextValue
 )
@@ -138,7 +143,7 @@ const FormMessage = React.forwardRef<
 })
 FormMessage.displayName = "FormMessage"
 
-export {
+export { 
   Form,
   FormItem,
   FormLabel,
@@ -146,4 +151,5 @@ export {
   FormDescription,
   FormMessage,
   FormField,
+  FormItemContext // Exportar el contexto para uso externo
 }
